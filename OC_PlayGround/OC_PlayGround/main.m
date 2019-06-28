@@ -29,7 +29,7 @@ int main(int argc, const char * argv[]) {
 //                NSLog(@"%c",name[j]);
             }
             NSLog(@"属性名：name:%s",name);
-            NSString *nameStr = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
+//            NSString *nameStr = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
 //            NSLog(@"nameStr:%@",nameStr);
         }
         free(propertys);
