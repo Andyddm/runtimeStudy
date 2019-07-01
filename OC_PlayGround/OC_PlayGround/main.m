@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
         
         Ivar ivar = class_getInstanceVariable([andy class], "ivar_str");
         NSString *str = object_getIvar(andy, ivar);
-        NSLog(@"成员变量名：str:%@",str);
+        NSLog(@"成员变量值：str:%@",str);
         
         unsigned int propertyCount;
         objc_property_t *propertys =class_copyPropertyList([andy class], &propertyCount);
@@ -42,6 +42,8 @@ int main(int argc, const char * argv[]) {
         }
         free(methods);
         
+        float a[] = {1.0, 2.0, 3.0};
+        NSLog(@"array encoding type: %s", @encode(typeof(a)));
         
     }
     return 0;

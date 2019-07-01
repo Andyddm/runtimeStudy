@@ -22,12 +22,13 @@
 -(instancetype)init{
     self = [super init];
     if (self) {
-        self->ivar_str = @"ivar_str";
+        self->ivar_str = @"ivar_——————";
     }
     return self;
 }
 
 - (void)publicMethod:(NSString *)str{
+    void(^action)(void);
     
 }
 
