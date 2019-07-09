@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSDictionary *im_dic;
 
 - (void)publicMethod:(NSString *)str;
++ (void)classMethod;
 
 @end
 

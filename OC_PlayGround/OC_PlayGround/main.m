@@ -9,6 +9,21 @@
 #import <Foundation/Foundation.h>
 #import <objc/message.h>
 #import "AndyPaly.h"
+#include <dlfcn.h>
+
+int *twoSum(int* nums, int numsSize, int target, int* returnSize){
+    static int a[2] = {0};
+    for (int i = 0; i < numsSize; i++) {
+        for (int j = i + 1; j < numsSize; j++) {
+            if (nums[i] + nums[j] == target) {
+                a[0] = i;
+                a[1] = j;
+                return a;
+            }
+        }
+    }
+    return 0;
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -42,9 +57,42 @@ int main(int argc, const char * argv[]) {
         }
         free(methods);
         
+        SEL sell = @selector(publicMethod:);
+        NSLog(@"publicMethod:%p",sell);
+        
         float a[] = {1.0, 2.0, 3.0};
         NSLog(@"array encoding type: %s", @encode(typeof(a)));
         
+        unsigned int o = 1;
+        
+        char *a1 = "123";
+        char *a2 = "456";
+        char *a3 = "789";
+        char dest[100] = {};
+        memcpy(dest, a1, 3);
+        memcpy(dest + 3, a2, 3);
+        printf("dest:%s len:%lu \n ",dest,sizeof(o));
+        
+        int si[7] = {1,2,3,4,5,6,7};
+        int *s2 = si;
+        
+        
+        printf("s2:%c \n",s2[6]);
+        
+        
+        
+        int sum[5] = {1,2,3,4,5};
+        int *res;
+        res = twoSum(sum, 5, 7, NULL);
+        NSLog(@"res:%d,%d",res[0],res[1]);
+        
+        
+        
     }
+    
+    
     return 0;
+    
 }
+
+

@@ -28,7 +28,7 @@
 }
 
 - (void)publicMethod:(NSString *)str{
-    void(^action)(void);
+    
     
 }
 
@@ -36,5 +36,8 @@
     return @"privateMethod";
 }
 
++ (void)classMethod{
+    
+}
 
 @end
